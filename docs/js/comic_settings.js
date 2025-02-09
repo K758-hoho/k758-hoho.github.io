@@ -15,32 +15,32 @@ const maxpg = 2; //the current number of pages your comic has in total. this DOE
 //YOU MUST UPDATE THIS NUMBER EVERY TIME YOU ADD A NEW PAGE or else it wont display the most recent page
 
 // COMIC PAGE SETTINGS
-const folder = "docs/comics"; //directory of the folder where you keep all the comics
-const image = "pg"; //what you'll name all your comic pages
-const imgPart = "_" //special character(s) you put after the page number to subdivide pages into multiple image files (ie pg2_1, pg2_2, etc)
-const ext = "webp"; //file extension of your comic pages
+const folder = ""; //directory of the folder where you keep all the comics (not used for Cloudinary)
+const image = ""; //what you'll name all your comic pages (not used for Cloudinary)
+const imgPart = ""; //special character(s) you put after the page number to subdivide pages into multiple image files (not used for Cloudinary)
+const ext = ""; //file extension of your comic pages (not used for Cloudinary)
 
 //THUMBNAIL SETTINGS
-const thumbFolder = "docs/thumbs" //directory of the folder where you keep all the thumbnail images for the comics, in case you want the archive page to use thumbnails.
-const thumbExt = "webp" //file extension of thumbnails
+const thumbFolder = "img/thumbs" //directory of the folder where you keep all the thumbnail images for the comics, in case you want the archive page to use thumbnails.
+const thumbExt = "png" //file extension of thumbnails
 const thumbDefault = "default" //name of the default thumbnail that displays when no thumbnail is set, located in the directory you set thumbFolder to.
 
 //NAVIGATION SETTINGS
-const navText = ["first", "previous", "next", "latest"]; //alt text for your nav images, or just the text that shows up if you're not using images
+const navText = ["First", "Previous", "Next", "Last"]; //alt text for your nav images, or just the text that shows up if you're not using images
 const navFolder = "https://res.cloudinary.com/dkvkq02fo/image/upload/v1739116409"; //directory where nav images are stored
-const navExt = "webp" //file extension of nav images
+const navExt = "webp"; //file extension of nav images
 const navScrollTo = "#showComic"; //id of the div you want the page to automatically scroll to when you click to the next comic. will turn off if you delete text between quotation marks
 
-if (pg == 0) {pg = maxpg;} //display MOST RECENT COMIC when the webpage is loaded. if you want to instead have the FIRST COMIC displayed first, change maxpg to 1.
+if (pg == 0) { pg = maxpg; } //display MOST RECENT COMIC when the webpage is loaded. if you want to instead have the FIRST COMIC displayed first, change maxpg to 1.
 
 //pgData holds all the parameters for each of your pages. copypaste this and fill out accordingly:
 /* 
     {
         pgNum: ,
         title: "",
-        date: writeDate([YEAR],[MONTH],[DAY]),
+        date: writeDate([YEAR], [MONTH], [DAY]),
         altText: "",
-        imageFiles: "",
+        imageFiles: [""],
         authorNotes: ``
     },
 */
@@ -50,9 +50,9 @@ const pgData = [
     {
         pgNum: 1, //what page number it is
         title: "The First Page Title", //the title of the page (leaving this blank will default it to "Page X")
-        date: writeDate(2021, 3, 16), //the date on which the page was posted (mainly for the archive). The date is written using a function called "writeDate", basically just put writeDate and then some parenthesis and, comma separated, the year followed by the month and the day. Don't forget another comma at the end outside the parenthesis!
-        altText: "Here's some alt text!", //the alt text (mouse over text) for this particular comic. put nothing inbetween the quotes for no alt text
-        imageFiles: 1, //how many image files this page is split into
+        date: writeDate(2025, 2, 9), //the date on which the page was posted (mainly for the archive). The date is written using a function called "writeDate"
+        altText: "Here's some alt text!", //the alt text (mouse over text) for this particular comic. put nothing in between the quotes for no alt text
+        imageFiles: ["https://res.cloudinary.com/dkvkq02fo/image/upload/v1739118449/pg1_iuunxw.webp"], //array of image URLs
         authorNotes: `
             <p>If you want to write an author notes section, this'd be the place to do it.</p>
             <p>You can even use whatever html tags you want in here to format it, the script called on your html page should spit out anything you type between these backticks.</p>
@@ -61,52 +61,15 @@ const pgData = [
     {
         pgNum: 2,
         title: "The Second Page Title",
-        date: writeDate(2021, 3, 17),
+        date: writeDate(2025, 2, 9),
         altText: "Here's some more alt text!",
-        imageFiles: 2,
+        imageFiles: [
+            "https://res.cloudinary.com/dkvkq02fo/image/upload/v1739118449/pg2_1_r7b1ch.webp",
+            "https://res.cloudinary.com/dkvkq02fo/image/upload/v1739118449/pg2_2_ooxou7.webp"
+        ], //array of image URLs
         authorNotes: `
             <p>You can have different author notes for every page.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, orci sit amet dignissim eleifend, magna felis malesuada nunc, ut sagittis purus mi ac urna. Fusce ligula urna, varius vel sapien sit amet, vulputate tempor felis. In hac habitasse platea dictumst. Aliquam laoreet volutpat interdum. Vestibulum non libero sit amet leo accumsan porttitor. Vivamus nec porttitor neque. Sed eget mauris quam.</p>
-            `,
-    },
-    {
-        pgNum: 3,
-        title: "The Third Page Title",
-        date: writeDate(2021, 3, 18),
-        altText: "Here's even more alt text!",
-        imageFiles: 1,
-        authorNotes: `
-            <p>Sed lectus magna, dignissim eu sapien quis, euismod pulvinar diam. In odio massa, auctor blandit dolor id, varius ultricies lacus. Suspendisse sed libero vel leo dictum consectetur. In fringilla elit sit amet placerat varius. Duis vel lacus ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Proin eleifend metus eu ex elementum venenatis. Curabitur sodales, ipsum placerat ornare convallis, sem eros convallis felis, vel efficitur erat ante id diam.</p>
-            `,
-    },
-    {
-        pgNum: 4,
-        title: "Even If The Title of a Page Is Really Long, It'll Wrap",
-        date: writeDate(2021, 3, 19),
-        altText: "So much alt text...",
-        imageFiles: 1,
-        authorNotes: `
-            <p>Sed lectus magna, dignissim eu sapien quis, euismod pulvinar diam. In odio massa, auctor blandit dolor id, varius ultricies lacus. Suspendisse sed libero vel leo dictum consectetur. In fringilla elit sit amet placerat varius. Duis vel lacus ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Proin eleifend metus eu ex elementum venenatis. Curabitur sodales, ipsum placerat ornare convallis, sem eros convallis felis, vel efficitur erat ante id diam.</p>
-            `,
-    },
-    {
-        pgNum: 5,
-        title: "Also if you don't feel like coming up with a title for every page, you don't have to.",
-        date: writeDate(2021, 3, 20),
-        altText: "Here's even more alt text!",
-        imageFiles: 1,
-        authorNotes: `
-            <p>Sed lectus magna, dignissim eu sapien quis, euismod pulvinar diam. In odio massa, auctor blandit dolor id, varius ultricies lacus. Suspendisse sed libero vel leo dictum consectetur. In fringilla elit sit amet placerat varius. Duis vel lacus ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Proin eleifend metus eu ex elementum venenatis. Curabitur sodales, ipsum placerat ornare convallis, sem eros convallis felis, vel efficitur erat ante id diam.</p>
-            `,
-    },
-    {
-        pgNum: 6,
-        title: `Unnamed pages won't display a title, and they'll show up as "Page [X]" when listed in the archive`,
-        date: writeDate(2021, 3, 21),
-        altText: "Here's even more alt text!",
-        imageFiles: 1,
-        authorNotes: `
-            <p>Sed lectus magna, dignissim eu sapien quis, euismod pulvinar diam. In odio massa, auctor blandit dolor id, varius ultricies lacus. Suspendisse sed libero vel leo dictum consectetur. In fringilla elit sit amet placerat varius. Duis vel lacus ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Proin eleifend metus eu ex elementum venenatis. Curabitur sodales, ipsum placerat ornare convallis, sem eros convallis felis, vel efficitur erat ante id diam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, orci sit amet dignissim eleifend, magna felis malesuada nunc, ut sagittis purus mi ac urna. Fusce ligula urna, aliquam ac efficitur eget, tincidunt a ipsum. Duis vehicula nec quam vitae vehicula.</p>
             `,
     },
 ];
@@ -115,7 +78,7 @@ const pgData = [
 
 function findGetParameter(parameterName) { //function used to write a parameter to append to the url, to give each comic page its own unique url
     let result = null,
-    tmp = []; 
+        tmp = [];
     let items = location.search.substr(1).split("&");
     for (let index = 0; index < items.length; index++) {
         tmp = items[index].split("=");
@@ -124,10 +87,10 @@ function findGetParameter(parameterName) { //function used to write a parameter 
     return result;
 }
 
-function writeDate(year,month,day) { //write date of comic page
-    const date = new Date(year,month-1,day)
-    .toDateString() //format date as Day Month Date Year
-    .toString() //convert it to a string
-    .slice(4) //remove the Day
+function writeDate(year, month, day) { //write date of comic page
+    const date = new Date(year, month - 1, day)
+        .toDateString() //format date as Day Month Date Year
+        .toString() //convert it to a string
+        .slice(4) //remove the Day
     return date
 }
