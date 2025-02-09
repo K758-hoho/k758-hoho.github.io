@@ -21,7 +21,7 @@ const imgPart = "_" //special character(s) you put after the page number to subd
 const ext = "webp"; //file extension of your comic pages
 
 //THUMBNAIL SETTINGS
-const thumbFolder = "https://github.com/K758-hoho/k758-hoho.github.io/blob/main/docs/images/" //directory of the folder where you keep all the thumbnail images for the comics, in case you want the archive page to use thumbnails.
+const thumbFolder = "https://github.com/K758-hoho/k758-hoho.github.io/blob/main/docs/images/thumb" //directory of the folder where you keep all the thumbnail images for the comics, in case you want the archive page to use thumbnails.
 const thumbExt = "webp" //file extension of thumbnails
 const thumbDefault = "default" //name of the default thumbnail that displays when no thumbnail is set, located in the directory you set thumbFolder to.
 
