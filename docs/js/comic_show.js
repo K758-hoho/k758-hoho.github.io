@@ -99,6 +99,15 @@ console.log("alt text - " + `"` + pgData[pg - 1].altText + `"`);
 console.log("nav text - " + navText);
 console.log("nav image file extension - " + navExt);
 
+// Define the folder where your navigation button images are stored
+const navFolder = "images/nav";
+
+// Define the text for each navigation button
+const navText = ["first", "previous", "next", "latest"];
+
+// Define the file extension for the navigation button images
+const navExt = "webp";
+
 function imgOrText(setImg,navTextSet) { //function that writes the indicated nav button as either an image or text
 
   if (setImg) { //if its an image
