@@ -721,7 +721,7 @@ button[title]:hover::after {
   color:white;
 }
 
-.comicnav {
+.comicNav {
   text-align: center;
 }
 
@@ -2283,13 +2283,13 @@ details[open] #Transcript {
 /*rules for smaller screens*/
 
 @media (max-width:1000px) {
-  .comicnav {
+  .comicNav {
     display:flex;
     align-items:center;
     justify-content:center;
     flex-wrap:wrap;
   }
-  .comicnav .quicknav {
+  .comicNav .quicknav {
     width:100%;
     order:10; /*the default order is 0, so this will make it the last (for small screens)*/
     margin-top:15px;
@@ -2655,25 +2655,19 @@ details[open] #Transcript {
 
         <div id="comic-section">
                 <div class="title-box" class="box">
-                      <h2 class="comictitle">Test Comic</h2>
+                	<h2 class="comictitle">
+				<div class="writePageTitle"></div>
+			</h2>
                       <button id="fullscreen-btn" title="Toggle Fullscreen"><i class="fas fa-expand" style="color:#f6eee3;"></i></button>
                 </div>
                 
                 <div id="comic-title-box" class="box">
                     <div class="merged">
                       <div class="comicimagewrap" id="comic-container">
-                        <div id=comic-image>
-<div class="comicsegments">
-<div class="segmentcontainer">
-<img src="https://img.comicfury.com/comics/371/68630a1737217076b116847f1586131368.webp" alt="Test Comic" title="More info on updates and where to find the author." width="800" height="2800" class="comicsegmentimage" />
-</div>
-<div class="segmentcontainer">
-<img src="https://img.comicfury.com/comics/371/68630a1737293528b116847f1431503572.webp" alt="Test Comic" title="More info on updates and where to find the author." width="800" height="1422" class="comicsegmentimage" />
-</div>
-</div>
-</div>
+                        <div id=comic-image class="writePageClickable"></div>
+		      </div>
                         <button id="exit-fullscreen-btn" class="hidden" title="Exit Fullscreen"><i class="fas fa-compress"></i></button>
-                      </div>
+		    </div>
                         
                         
                     </div>
@@ -2681,8 +2675,7 @@ details[open] #Transcript {
                     <div class="merged">
                         <div id="comicdate" class="secondary-info-text">
                             January 10, 2025 
-                            
-                                
+
                                     in <a href="/archive/87635" style="color:#d4c1a7;">Announcements</a>
                                 
                             
@@ -2692,26 +2685,8 @@ details[open] #Transcript {
         </div>
         
         <div id="comic-nav-box" class="box">
-            
 
-            <div class="comicnav" id="comicnav">
-                <a href="/comics/1/#content-start" rel="start" class="comicnavlink ">
-                    <img src="/files/comicnavigation/arrow_to_first.webp" alt="&lt;&lt;First" title="Go to the first comic" width="110px" height="53.32px" loading="lazy" />
-                </a>
-
-                <a href="/comics/1/#content-start" rel="prev" class="comicnavlink ">
-                    <img src="/files/comicnavigation/previous.webp" alt="&lt;Previous" title="Go to previous comic" width="110px" height="53.32px" loading="lazy" />
-                </a>
-
-                <a href="/comics/2/#content-start" rel="next" class="comicnavlink comicnavlink-grayedout">
-                    <img src="/files/comicnavigation/next.webp" alt="Next&gt;" title="Go to next comic" width="110px" height="53.32px" loading="lazy" />
-                </a>
-
-                <a href="/comics/#content-start" rel="index" class="comicnavlink comicnavlink-grayedout">
-                    <img src="/files/comicnavigation/arrow_to_latest.webp" alt="Latest&gt;&gt;" title="Go to the latest comic" width="110px" height="53.32px" loading="lazy" />
-                </a>
-
-            </div>
+            <div class="writeNav"></div>
             
             <span class="quicknav">
                     <select onchange="jumpTo(this.options[selectedIndex].value);" class="comicnavlink" aria-label="Quicknav Pages">
