@@ -53,36 +53,21 @@ function writeAuthorNotes(div) { // display author notes
 
 // function used to split pages into multiple images if needed, and add alt text
 function writePage() {
-    let partExtension = ""; // part extension to add to the url if the image is split into multiple parts
-    let altText = ""; // variable for alt text
-    let path = (folder != "" ? folder + "/" : "") + image + pg + partExtension + "." + ext; // path for your comics made out of variables strung together
+    let altText = pgData[pg - 1].altText; // set alt text to the text defined in the array
     let page = ``;
 
     if (pgData.length < pg) { // if the array is blank or not long enough to have an entry for this page
         // debug
         console.log("page code to insert - " + page);
         console.log("alt text to print - " + altText);
-        //
-        page = `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`;
         return page;
     } else if (pgData.length >= pg) { // if the array is not blank, and if it's at least long enough to have an entry for the current page
-
-        altText = pgData[pg - 1].altText; // set alt text to the text defined in the array
-
-        if (pgData[pg - 1].imageFiles > 1) { // if there's more than one page segment
-            for (let i = 1; i < pgData[pg - 1].imageFiles + 1; i++) { // for loop to put all the parts of the image on the webpage
-                partExtension = imgPart + i.toString();
-                path = (folder != "" ? folder + "/" : "") + image + pg + partExtension + "." + ext; // reinit path (there has to be a less dumb way to do this)
-                if (i > 1) { page += `<br/>`; } // add line break
-                page += `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`; // add page segment
-            }
-        } else {
-            page = `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`;
-        }
+        pgData[pg - 1].imageFiles.forEach(function(url) {
+            page += `<img alt="${altText}" title="${altText}" src="${url}" /><br/>`;
+        });
         // debug
         console.log("page code to insert - " + page);
         console.log("alt text to print - " + altText);
-        //
         return page;
     }
 }
@@ -91,7 +76,7 @@ function writePage() {
 console.log("array blank/not long enough? " + (pgData.length < pg));
 console.log("array length - " + pgData.length);
 console.log("current page - " + pg);
-console.log("number of page segments - " + pgData[pg - 1].imageFiles);
+console.log("number of page segments - " + pgData[pg - 1].imageFiles.length);
 console.log("alt text - " + `"` + pgData[pg - 1].altText + `"`);
 
 console.log("nav text - " + navText);
@@ -165,6 +150,35 @@ function writeNav(imageToggle) {
         }
     }
 }
+
+// FUNCTION TO UPDATE PREV AND NEXT BUTTONS
+function updatePrevNextButtons() {
+    const prevButton = document.getElementById('prev-comic-link');
+    const nextButton = document.getElementById('next-comic-link');
+
+    if (prevButton) {
+        if (pg > 1) {
+            prevButton.href = "?pg=" + (pg - 1) + navScrollTo;
+            prevButton.classList.remove("comicnavlink-grayedout");
+        } else {
+            prevButton.href = "#";
+            prevButton.classList.add("comicnavlink-grayedout");
+        }
+    }
+
+    if (nextButton) {
+        if (pg < maxpg) {
+            nextButton.href = "?pg=" + (pg + 1) + navScrollTo;
+            nextButton.classList.remove("comicnavlink-grayedout");
+        } else {
+            nextButton.href = "#";
+            nextButton.classList.add("comicnavlink-grayedout");
+        }
+    }
+}
+
+// Call the function to update prev and next buttons
+updatePrevNextButtons();
 
 // KEYBOARD NAVIGATION
 function keyNav() {
