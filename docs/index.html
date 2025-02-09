@@ -377,7 +377,6 @@ body:not(#comic-section) .topnav {
   }
 }
 
-[c:iscomicpage]
 .comicad a, .comicad a:visited{
     color: #f6eee3;
     font-size:24px;
@@ -390,24 +389,7 @@ body:not(#comic-section) .topnav {
 .comicad {
     margin-top:20px;
 }
-[/]
-
-[c:pagetitle=Overview]
-.comicad a, .comicad a:visited{
-    color: #f6eee3;
-    font-size:24px;
-}
-
-.comicad a:hover {
-    color: #C2191F;
-}
-
-.comicad {
-    margin-top:20px;
-}
-[/]
-
-[c:iscomicpage]
+		
 .share-container {
   position: relative;
   padding: 10px 20px;
@@ -737,7 +719,6 @@ button[title]::after {
 button[title]:hover::after {
   opacity: 1;
 }
-[/]
 
 .separator {
   height: 1px;
@@ -1096,9 +1077,7 @@ body.scrolled .topbutton {
   opacity: 1;
   visibility: visible;
 }
-[/]
-
-[c:!iscomicpage]
+			
 body {
   scroll-behavior: smooth;
 }
@@ -1174,9 +1153,7 @@ body.scrolled .topbutton {
   opacity: 1;
   visibility: visible;
 }
-[/]
-
-[c:pagetitle=Map of Vjdniscova]
+			
 .map-container {
     position: relative;
     max-width: 1000px;
