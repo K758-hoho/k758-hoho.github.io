@@ -102,7 +102,7 @@ function imgOrText(setImg, navTextSet) { // function that writes the indicated n
 function writeNav(imageToggle) {
     let writeNavDiv = document.querySelectorAll(".writeNav");
     writeNavDiv.forEach(function (element) {
-        element.innerHTML = `<div class="comicNav">
+        element.innerHTML = `<div class="comicNav" id="comicNav">
             ${firstButton()}
             ${prevButton()}
             ${nextButton()}
