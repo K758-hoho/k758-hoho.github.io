@@ -102,7 +102,7 @@ console.log("nav image file extension - " + navExt);
 function imgOrText(setImg,navTextSet) { //function that writes the indicated nav button as either an image or text
 
   if (setImg) { //if its an image
-    return `<img src="` + navFolder + `/nav_` + navText[navTextSet].toLowerCase() + `.` + navExt + `" alt="` + navText[navTextSet] + `" />`;
+    return `<img src="` + navFolder + `/nav` + navText[navTextSet].toLowerCase() + `.` + navExt + `" alt="` + navText[navTextSet] + `" />`;
   } else {
     return navText[navTextSet];
   }
