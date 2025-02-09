@@ -2549,7 +2549,6 @@ details[open] #Transcript {
         <link rel="preconnect" href="https://cdn.jsdelivr.net">
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
         <link rel="preconnect" href="https://res.cloudinary.com">
-        <link rel="preconnect" href="https://www.comicad.net">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" media="print" onload="this.media='all'">
         <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"></noscript>
@@ -2608,8 +2607,8 @@ details[open] #Transcript {
         <script src="https://cdn.jsdelivr.net/npm/workbox-precaching@7.3.0/build/workbox-precaching.prod.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/workbox-expiration@7.3.0/build/workbox-expiration.prod.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/workbox-cacheable-response@7.3.0/build/workbox-cacheable-response.prod.js" defer></script>
-        
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="4908dd97-2228-449f-b074-a19d2a775b79"></script>
+	<script src='https://cdn.jsdelivr.net/gh/K758-hoho/k758-hoho.github.io@main/docs/js/comic_show.js' defer></script>
+	<script src='https://cdn.jsdelivr.net/gh/K758-hoho/k758-hoho.github.io@main/docs/js/comic_settings.js' defer></script>
     </head>
 	
 	<body>
@@ -2655,69 +2654,23 @@ details[open] #Transcript {
 
         <div id="comic-section">
                 <div class="title-box" class="box">
-                	<h2 class="comictitle">
-				<div class="writePageTitle"></div>
-			</h2>
+			<div class="writePageTitle"></div>
                       <button id="fullscreen-btn" title="Toggle Fullscreen"><i class="fas fa-expand" style="color:#f6eee3;"></i></button>
                 </div>
                 
                 <div id="comic-title-box" class="box">
                     <div class="merged">
                       <div class="comicimagewrap" id="comic-container">
-                        <div id=comic-image class="writePageClickable"></div>
+                        <div class="writePageClickable"></div>
 		      </div>
                         <button id="exit-fullscreen-btn" class="hidden" title="Exit Fullscreen"><i class="fas fa-compress"></i></button>
 		    </div>
-                        
-                        
-                    </div>
-        
-                    <div class="merged">
-                        <div id="comicdate" class="secondary-info-text">
-                            January 10, 2025 
-
-                                    in <a href="/archive/87635" style="color:#d4c1a7;">Announcements</a>
-                                
-                            
-                        </div>
-                    </div>
                 </div>
         </div>
         
         <div id="comic-nav-box" class="box">
 
-            <div class="writeNav"></div>
-            
-            <span class="quicknav">
-                    <select onchange="jumpTo(this.options[selectedIndex].value);" class="comicnavlink" aria-label="Quicknav Pages">
-                        
-                            
-                                <optgroup label="Announcements">
-                            
-
-                            <option value="/comics/1/#content-start"  >1</option>
-
-                            
-                        
-                            
-
-                            <option value="/comics/2/#content-start" selected="selected" >2</option>
-
-                            
-                                </optgroup>
-                            
-                        
-                    </select>
-                </span>
-            
-            
-                <div id="tags">
-                    <span class="tags-label">Tags:</span>
-                    
-                        <a href="/search/tag/announcements/">Announcements</a>
-                    
-                </div>     
-            
+            <div class="writeNav"></div>  
 
         <div class="share-container">
           <button class="share-button" onclick="toggleShare()" data-tooltip="Share this page" title="Click to share" alt="Click to share">
@@ -2774,14 +2727,8 @@ details[open] #Transcript {
           <a href="/subscribe/" class="share-button" id="comic-sub-btn" title="Click to subscribe" alt="Click to subscribe" data-tooltip="Subscribe for updates"><i class="fa-solid fa-bell"></i></a>
           
           <a href="/archive/87635" class="share-button" id="archive-btn" title="Go to comic archive" alt="Go to comic archive" data-tooltip="Open chapter archive"><i class="fa-solid fa-box-archive"></i></a>
-          
-          
-          
-        </div>
 
-            <div class="comic-options">
-                
-            </div>
+        </div>
             
         <div id="comic-navigation">
             
@@ -2906,8 +2853,6 @@ details[open] #Transcript {
         </footer>
 
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js' class="kofi-button" defer></script>
-	<script src='https://cdn.jsdelivr.net/gh/K758-hoho/k758-hoho.github.io@main/docs/js/comic_show.js' defer></script>
-	<script src='https://cdn.jsdelivr.net/gh/K758-hoho/k758-hoho.github.io@main/docs/js/comic_settings.js' defer></script>
     <script src="https://cdn.jsdelivr.net/gh/K758-hoho/TB@tbjs/all.js" defer></script>
 
     <script>
@@ -2923,9 +2868,7 @@ details[open] #Transcript {
         }
     }
     </script>
-    
-    
-    
+
     <script>
     document.addEventListener('DOMContentLoaded', (event) => {
       const topnav = document.querySelector('.topnav');
