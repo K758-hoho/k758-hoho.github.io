@@ -1,9 +1,48 @@
-body {
+html {
     background-color: #ccc;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: none;
+    display: grid;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    place-items: center;
+    background-color: #ccc;
+    overflow-x: hidden;
+}
+
+a {
+background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    #54b3d6 50%,
+    #000 50%
+);
+background-size: 200% 100%;
+background-position: -100%;
+display: inline-block;
+padding: 5px 0;
+position: relative;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+transition: all 0.3s ease-in-out;
+}
+
+a:before{
+content: '';
+background: #54b3d6;
+display: block;
+position: absolute;
+bottom: -3px;
+left: 0;
+width: 0;
+height: 3px;
+transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+background-position: 0;
+}
+
+a:hover::before{
+width: 100%;
 }
 
 .content {
@@ -42,11 +81,24 @@ footer {
 .navbar {
     position: sticky;
     position: -webkit-sticky;
+    display: flex;
     top: 0;
-    flex-direction: row;
+    gap: 30px;
     width: 100%;
-    float: right;
+    font-size: 1.5em;
     background-color: #104f37;
+    flex-wrap: nowrap;
+}
+
+.navbar a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 10px;
+    transition:all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #063022;
 }
 
 .tags {
