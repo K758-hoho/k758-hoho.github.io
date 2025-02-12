@@ -7,8 +7,14 @@ body {
 }
 
 .content {
-    max-width: 80ch;
+    max-width: 1150px;
     margin: 0 auto;
+}
+
+.tagline {
+    text-align: center;
+    margin-top: 50px;
+    font-size:1.2em
 }
 
 h1, h2 {
