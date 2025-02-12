@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="docs\assets\css\style.css">
-    <link rel="icon" type="image/svg+xml" href="docs\assets\images\tapir.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/K758-hoho/k758-hoho.github.io@main/docs/assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dkvkq02fo/image/upload/v1739378801/tapir_iyiifb.svg">
     {% if description %}
       <meta name="description" content="{{description}}"/>
     {% endif %}
@@ -47,15 +47,15 @@
         {% if tagline %}
             <p>{{ tagline }}</p>
         {% endif %}
-        <div class="tags">
         {% if tags %}
+            <div class="tags">
             <ul>
                 {% for tag in tags %}
                     <li>{{ tag }}</li>
                 {% endfor %}
             </ul>
+            </div>
         {% endif %}
-        </div>
     </header>
 
     <main>
