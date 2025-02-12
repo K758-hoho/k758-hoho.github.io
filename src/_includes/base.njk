@@ -6,6 +6,24 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="docs\assets\css\style.css">
     <link rel="icon" type="image/svg+xml" href="docs\assets\images\tapir.svg">
+    {% if description %}
+      <meta name="description" content="{{description}}"/>
+    {% endif %}
+    {% if image %}
+      <meta property="og:image" content="{{image}}"/>
+    {% endif %}
+    {% if alt %}
+      <meta property="og:image:alt" content="{{alt}}"/>
+    {% endif %}
+    {% if type %}
+      <meta property="twitter:card" content="{{type}}"/>
+    {% endif %}
+    {% if twitter %}
+      <meta property="twitter:site" content="{{twitter}}"/>
+    {% endif %}
+    {% if name %}
+      <meta property="twitter:creator" content="{{name}}"/>
+    {% endif %}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"></noscript>
@@ -16,65 +34,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"></noscript>
 
-<style>
-body {
-    background-color: #ccc;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h1, h2 {
-    text-align: center;
-    margin-top: 50px;
-    color: #104f37;
-}
-
-p {
-    font-size: 20px;
-    line-height: 1.5;
-    color:#555;
-}
-
-
-
-footer {
-    background-color: inherit;
-    color: inherit;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-.main-content {
-    padding: 20px;
-}
-
-button {
-    background-color: #104f37;
-    color: ccc;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #083d2b;
-}
-</style>
-
 </head>
 <body>
     <nav class="navbar">
-        <ul>
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/blog">Blog</a>
@@ -82,7 +44,18 @@ button:hover {
 
     <header>
         <h1>{{ title }}</h1>
-        <p>{{ tagline }}</p>
+        {% if tagline %}
+            <p>{{ tagline }}</p>
+        {% endif %}
+        <div class="tags">
+        {% if tags %}
+            <ul>
+                {% for tag in tags %}
+                    <li>{{ tag }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
     </header>
 
     <main>

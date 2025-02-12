@@ -5,8 +5,8 @@ tagline: Hi there! I'm Karin Kho, an aspiring digital artist and junior graphic 
 ---
 
 ## Featured Works
-- [Target Boskval](targetboskval.webcomic.ws)
-    My current project, a crime drama webcomic about a struggling illegal drug business.
+[Target Boskval](targetboskval.webcomic.ws)
+My current project, a crime drama webcomic about a struggling illegal drug business.
 
 ## Blog
 Stay updated with my latest posts:

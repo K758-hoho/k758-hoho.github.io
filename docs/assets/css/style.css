@@ -7,7 +7,7 @@ body {
 }
 
 .content {
-    max-width: 1200px;
+    max-width: 80ch;
     margin: 0 auto;
 }
 
@@ -43,14 +43,30 @@ footer {
     background-color: #104f37;
 }
 
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width:1200px;
+    height: auto;
+    background-color: #409c79;
+    color: #ccc;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 button {
     background-color: #104f37;
-    color: ccc;
+    color: #ccc;  
     border: none;
     padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #083d2b;
+    background-color: #063022;
 }
