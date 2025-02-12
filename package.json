@@ -1,0 +1,26 @@
+{
+  "name": "k758-hoho",
+  "version": "1.0.0",
+  "description": "This is the repository for my webcomic website. Do not reproduce the files in this repo such as comics and logos for commercial purposes without my legal permission. Always credit me whenever you share these assets non-commercially.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K758-hoho/k758-hoho.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K758-hoho/k758-hoho.github.io/issues"
+  },
+  "homepage": "https://github.com/K758-hoho/k758-hoho.github.io#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
