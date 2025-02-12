@@ -1,48 +1,35 @@
 html {
-    background-color: #ccc;
+    background-color: #fbe9d0;
     display: grid;
     font-family: 'Poppins', sans-serif;
     height: 100vh;
     place-items: center;
-    background-color: #ccc;
     overflow-x: hidden;
 }
 
 a {
-background-image: linear-gradient(
-    to right,
-    #54b3d6,
-    #54b3d6 50%,
-    #000 50%
-);
-background-size: 200% 100%;
-background-position: -100%;
-display: inline-block;
-padding: 5px 0;
-position: relative;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-transition: all 0.3s ease-in-out;
+    position: relative;
+    color: #54b3d6;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-a:before{
-content: '';
-background: #54b3d6;
-display: block;
-position: absolute;
-bottom: -3px;
-left: 0;
-width: 0;
-height: 3px;
-transition: all 0.3s ease-in-out;
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e64833;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
-a:hover {
-background-position: 0;
-}
-
-a:hover::before{
-width: 100%;
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .content {
@@ -65,7 +52,7 @@ h1, h2 {
 p {
     font-size: 20px;
     line-height: 1.5;
-    color:#555;
+    color:#244855;
 }
 
 footer {
@@ -86,12 +73,13 @@ footer {
     gap: 30px;
     width: 100%;
     font-size: 1.5em;
-    background-color: #104f37;
+    background-color: #fbe9d0;
     flex-wrap: nowrap;
+    padding: 10px;
 }
 
 .navbar a {
-    color: #ccc;
+    color: #fbe9d0;
     text-decoration: none;
     padding: 10px;
     transition:all 0.3s ease;
@@ -108,7 +96,7 @@ footer {
     max-width:1200px;
     height: auto;
     background-color: #409c79;
-    color: #ccc;
+    color: #fbe9d0;
     padding: 10px;
     margin: 0 auto;
     border-radius: 5px;
@@ -116,15 +104,17 @@ footer {
     margin-bottom: 20px;
 }
 
-button {
-    background-color: #104f37;
-    color: #ccc;  
+.button {
+    background-color: #244855;
+    color: #90aead;  
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #063022;
+.button:hover {
+    background-color: #90aead;
+    color: #244855;
 }
