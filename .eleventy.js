@@ -2,7 +2,8 @@ const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
     // Pass through static files
-    eleventyConfig.addPassthroughCopy("src/assets"); // Folder for static assets like images, css, js
+    eleventyConfig.addPassthroughCopy("src/assets/images"); // Folder for images
+    eleventyConfig.addPassthroughCopy("src/assets/css"); // Folder for css
     eleventyConfig.addPassthroughCopy("src/posts"); // Folder for blog posts
 
     // Add a filter to format dates, e.g. {{ post.date | date("dd LLLL yyyy") }}
