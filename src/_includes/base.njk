@@ -1,17 +1,11 @@
-----------------
-title: Home
-description: The official website of Karin Kho, an aspiring digital artist.
-----------------
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The official website of Karin Kho, an aspiring digital artist.">
-    <title>Karin Kho's Home</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>{{ title }} </title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/tapir.svg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"></noscript>
@@ -22,15 +16,29 @@ description: The official website of Karin Kho, an aspiring digital artist.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"></noscript>
 
-
 </head>
 <body>
-    <h1>Hi there!</h1>
-    <p><strong>Welcome to my blog!</strong> I'm Karin Kho, an aspiring digital artist and junior graphic designer in training. Here is where I post my thoughts</p>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        {{ title }}
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+
 
     <footer>
-        
         <p>&copy; 2024 - <span>{{ "" | year }}</span> Karin Kho</p>
     </footer>
+
 </body>
 </html>
