@@ -6,7 +6,7 @@ body {
     overflow-x: none;
 }
 
-.container {
+.content {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -33,11 +33,7 @@ footer {
     bottom: 0;
 }
 
-.main-content {
-    padding: 20px;
-}
-
-nav {
+.navbar {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
