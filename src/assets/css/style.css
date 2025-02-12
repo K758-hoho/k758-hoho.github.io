@@ -23,8 +23,6 @@ p {
     color:#555;
 }
 
-
-
 footer {
     background-color: inherit;
     color: inherit;
@@ -37,6 +35,16 @@ footer {
 
 .main-content {
     padding: 20px;
+}
+
+nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    flex-direction: row;
+    width: 100%;
+    float: right;
+    background-color: #104f37;
 }
 
 button {

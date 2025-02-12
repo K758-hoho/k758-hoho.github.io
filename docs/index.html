@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to my blog!</title>
     <link rel="stylesheet" href="docs\assets\css\style.css">
-    <link rel="icon" type="image/svg+xml" href="docs\assets\images\tapir copy.svg">
+    <link rel="icon" type="image/svg+xml" href="docs\assets\images\tapir.svg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"></noscript>
@@ -71,15 +71,13 @@ button:hover {
 }
 </style>
 
-
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-        </ul>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
     </nav>
 
     <header>
@@ -88,7 +86,8 @@ button:hover {
     </header>
 
     <main>
-        <h2>Featured Works</h2>
+        <div class="container">
+            <h2>Featured Works</h2>
 <ul>
 <li><a href="targetboskval.webcomic.ws">Target Boskval</a>
 My current project, a crime drama webcomic about a struggling illegal drug business.</li>
@@ -99,9 +98,8 @@ My current project, a crime drama webcomic about a struggling illegal drug busin
 </ul>
 <p>Thanks for visiting my blog!</p>
 
+        </div>
     </main>
-
-
 
     <footer>
         <p>&copy; 2024 - <span>2025</span> Karin Kho</p>
