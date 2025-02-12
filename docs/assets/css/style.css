@@ -9,7 +9,7 @@ html {
 
 a {
     position: relative;
-    color: #54b3d6;
+    color: #e64833;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
@@ -34,13 +34,13 @@ a:hover::after {
 
 .content {
     max-width: 1150px;
-    margin: 0 auto;
+    margin: 10px;
 }
 
 .tagline {
     text-align: center;
     margin-top: 50px;
-    font-size:1.2em
+    font-size:1.2em;
 }
 
 h1, h2 {
@@ -60,7 +60,6 @@ footer {
     color: inherit;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }
@@ -68,25 +67,33 @@ footer {
 .navbar {
     position: sticky;
     position: -webkit-sticky;
-    display: flex;
     top: 0;
     gap: 30px;
     width: 100%;
     font-size: 1.5em;
     background-color: #fbe9d0;
-    flex-wrap: nowrap;
     padding: 10px;
 }
 
-.navbar a {
-    color: #fbe9d0;
+.navbar a:link, .navbar a:visited {
+    color: #90aead;
     text-decoration: none;
     padding: 10px;
     transition:all 0.3s ease;
+    border-radius: 5px;
 }
 
 .navbar a:hover {
-    background-color: #063022;
+  background-color: #e64833;
+  color: #fbe9d0;
+}
+
+.active {
+  justify-content: flex-start;
+}
+
+.to {
+  justify-content: flex-end;
 }
 
 .tags {
