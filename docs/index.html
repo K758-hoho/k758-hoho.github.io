@@ -99,10 +99,6 @@ footer {
     display:inline-flex;
 }
 
-.navbar a:hover {
-    color: #e64833;
-}
-
 .navbar a:link, .navbar a:visited {
     top: 0;
     gap: 30px;
@@ -114,13 +110,13 @@ footer {
     color: #e64833;
 }
 
-.to a {
+.to {
     justify-content: flex-end;
 }
 
-.active a,
-.active a::after,
-.active a:hover::after {
+a.active,
+a.active::after,
+a.active:hover::after {
   transition: none;
   transform-origin: none;
   content: none;
