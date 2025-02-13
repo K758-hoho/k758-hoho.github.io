@@ -1,6 +1,6 @@
-# My Webcomic
+# My Personal Website
 
-This is the repository for my webcomic website. Do not reproduce the files in this repo such as comics and logos for commercial purposes without my legal permission. Always credit me whenever you share these assets non-commercially.
+This is the repository for my website. Do not reproduce the files in this repo such as comics and logos for commercial purposes without my legal permission. Always credit me whenever you share these assets non-commercially.
 
 ## License
 
