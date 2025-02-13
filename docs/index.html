@@ -51,14 +51,6 @@ a:hover::after {
     transform-origin: bottom left;
 }
 
-a.no-transition,
-a.no-transition::after,
-a.no-transition:hover::after {
-    transition: none;
-    transform-origin: none;
-    content: none;
-}
-
 .content {
     margin: 10px;
 }
@@ -127,8 +119,11 @@ footer {
 }
 
 .no-transition a,
-.no-transition a::after {
+.no-transition a::after,
+.no-transition a:hover::after {
     transition: none;
+    transform-origin: none;
+    content: none;
 }
 
 .tags {
