@@ -123,16 +123,24 @@ footer {
     transition: all 0.3s ease;
     align-items: center;
     font-weight: bold;
-    color: #244855;
+    color: #e64833;
 }
 
 .to a {
     justify-content: flex-end;
 }
 
-.no-transition a,
-.no-transition a::after,
-.no-transition a:hover::after {
+.active a,
+.active a::after,
+.active a:hover::after {
+  transition: none;
+  transform-origin: none;
+  content: none;
+}
+
+a.no-transition,
+a.no-transition::after,
+a.no-transition:hover::after {
     transition: none;
     transform-origin: none;
     content: none;
