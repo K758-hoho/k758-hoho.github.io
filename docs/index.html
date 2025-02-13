@@ -29,6 +29,10 @@ a {
     transition: color 0.3s ease-in-out;
 }
 
+a:hover {
+    color: #e64833;
+}
+
 a::after {
     content: '';
     position: absolute;
@@ -52,7 +56,7 @@ a.no-transition::after,
 a.no-transition:hover::after {
     transition: none;
     transform-origin: none;
-
+    content: none;
 }
 
 .content {
