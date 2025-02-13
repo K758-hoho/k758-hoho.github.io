@@ -100,24 +100,35 @@ footer {
     top: 0;
     gap: 30px;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.2em;
     background-color: #fbe9d0;
     padding: 10px;
+    align-items: center;
+    display:inline-flex;
+}
+
+.navbar a:hover {
+    color: #e64833;
 }
 
 .navbar a:link, .navbar a:visited {
     top: 0;
     gap: 30px;
     width: 100%;
-    font-size: 1.5em;
-    padding: 5px;
     display: inline-flex;
     transition: all 0.3s ease;
+    align-items: center;
+    font-weight: bold;
     color: #244855;
 }
 
-.navbar a:hover {
-    color: #e64833;
+.to a {
+    justify-content: flex-end;
+}
+
+a.no-transition,
+a.no-transition::after {
+    transition: none;
 }
 
 .tags {
@@ -140,7 +151,6 @@ footer {
     color: #90aead;  
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -169,12 +179,7 @@ footer {
 
 </head>
 <body>
-    <nav class="navbar">
-            <a href="/" class="active"><img src="//res.cloudinary.com/dkvkq02fo/image/upload/v1739378801/tapir_iyiifb.svg" width="50px" height="50px"></a>
-            <a href="/about" class="to">About</a>
-            <a href="/notes" class="to">Notes</a>
-            <a href="/projects" class="to">Projects</a>
-    </nav>
+  {% include "partials/navbar.njk" %} 
 
   <div class="content">
     <header>
