@@ -114,8 +114,8 @@ footer {
     justify-content: flex-end;
 }
 
-a.no-transition,
-a.no-transition::after {
+.no-transition a,
+.no-transition a::after {
     transition: none;
 }
 
@@ -168,7 +168,7 @@ a.no-transition::after {
 </head>
 <body>
   <nav class="navbar">
-    <a href="/" class="active no-transition" alt="Click to go home" title="Click to go home"><img src="//res.cloudinary.com/dkvkq02fo/image/upload/e_background_removal/v1739378801/tapir_iyiifb.svg" width="50px" height="50px"></a>
+    <a href="/" class="active" class="no-transition" alt="Click to go home" title="Click to go home"><img src="//res.cloudinary.com/dkvkq02fo/image/upload/v1739378801/tapir_iyiifb.svg" width="50px" height="50px"></a>
     <a href="/about" class="to" alt="Click to go to About" title="Click to go to About">About</a>
     <a href="/blog" class="to" alt="Click to go to Blog" title="Click to go to Blog">Blog</a>
     <a href="/works" class="to" alt="Click to go to Works" title="Click to go to Works">Works</a>
@@ -200,7 +200,7 @@ My current project, a crime drama webcomic about a struggling illegal drug busin
   </div>
 
   <footer>
-    <div class="socmed-btn no-transition">
+    <div class="socmed-btn" class="no-transition">
         <a href="https://bsky.app/profile/karin-kho.bsky.social" class="button" title="Find me on Bluesky" alt="Find me on Bluesky"><i class="fab fa-twitter"></i></a>
         <a href="https://www.instagram.com/karin_kho" class="button" title="Find me on Instagram" alt="Find me on Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://https://github.com/K758-hoho/k758-hoho.github.io" class="button" title="Find me on GitHub" alt="Find me on GitHub"><i class="fab fa-github"></i></a>
