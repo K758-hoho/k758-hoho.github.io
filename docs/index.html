@@ -101,13 +101,12 @@ footer {
 
 .navbar a:link, .navbar a:visited {
     top: 0;
-    gap: 30px;
-    width: 100%;
     display: inline-flex;
     transition: all 0.3s ease;
     align-items: center;
     font-weight: bold;
     color: #e64833;
+    padding: 15px;
 }
 
 .to {
@@ -122,12 +121,8 @@ a.active:hover::after {
   content: none;
 }
 
-a.no-transition,
-a.no-transition::after,
-a.no-transition:hover::after {
-    transition: none;
-    transform-origin: none;
-    content: none;
+.active {
+    transform: scale(1.1);
 }
 
 .tags {
@@ -147,16 +142,25 @@ a.no-transition:hover::after {
 
 .button {
     background-color: #244855;
-    color: #90aead;  
+    color: #90aead;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     cursor: pointer;
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
 .button:hover {
     background-color: #90aead;
     color: #244855;
+}
+
+a.button,
+a.button::after,
+a.button:hover::after {
+  transition: none;
+  transform-origin: none;
+  content: none;
 }
 
 .socmed-btn {
