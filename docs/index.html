@@ -151,6 +151,18 @@ img {
   max-width: 50vw;
 }
 
+a.img,
+a.img::after,
+a.img:hover::after {
+  transition: none;
+  transform-origin: none;
+  content: none;
+}
+
+img a:hover {
+    transform: scale(1.1);
+}
+
 ul {
     list-style-type: none;
     display: flex;
