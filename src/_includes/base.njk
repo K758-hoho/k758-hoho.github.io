@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/K758-hoho/k758-hoho.github.io@main/docs/assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dkvkq02fo/image/upload/v1739378801/tapir_iyiifb.svg">
     {% if description %}
       <meta name="description" content="{{description}}"/>
@@ -25,6 +24,140 @@
       <meta property="twitter:creator" content="{{name}}"/>
     {% endif %}
 
+    <style>
+html {
+    background-color: #fbe9d0;
+    display: grid;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    place-items: center;
+    overflow-x: hidden;
+}
+
+a {
+    position: relative;
+    color: #e64833;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e64833;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.content {
+    margin: 10px;
+}
+
+.tagline {
+    text-align: center;
+    margin-top: 50px;
+    font-size:1.2em;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: #104f37;
+}
+
+header {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+    color:#244855;
+}
+
+footer {
+    background-color: inherit;
+    color: inherit;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.navbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    gap: 30px;
+    width: 100%;
+    font-size: 1.5em;
+    background-color: #fbe9d0;
+    padding: 10px;
+}
+
+.navbar a:link, .navbar a:visited {
+    top: 0;
+    gap: 30px;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 5px;
+    display: inline-flex;
+    transition: all 0.3s ease;
+    color: #244855;
+}
+
+.navbar a:hover {
+    color: #e64833;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width:1200px;
+    height: auto;
+    background-color: #409c79;
+    color: #fbe9d0;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #244855;
+    color: #90aead;  
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #90aead;
+    color: #244855;
+}
+
+.socmed-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+    </style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"></noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.min.css" media="print" onload="this.media='all'">
@@ -37,16 +170,19 @@
 </head>
 <body>
     <nav class="navbar">
-            <a href="/" class="active">Home</a>
+            <a href="/" class="active"><img src="//res.cloudinary.com/dkvkq02fo/image/upload/v1739378801/tapir_iyiifb.svg" width="50px" height="50px"></a>
             <a href="/about" class="to">About</a>
-            <a href="/blog" class="to">Blog</a>
+            <a href="/notes" class="to">Notes</a>
+            <a href="/projects" class="to">Projects</a>
     </nav>
 
   <div class="content">
     <header>
         <h1>{{ title }}</h1>
         {% if tagline %}
+          <div class="tagline">  
             <p>{{ tagline }}</p>
+          </div>
         {% endif %}
         {% if tags %}
           <div class="tags">
@@ -64,9 +200,7 @@
     </main>
   </div>
 
-    <footer>
-        <p>&copy; 2024 - <span>{{ "" | year }}</span> Karin Kho</p>
-    </footer>
+  {% include "partials/footer.njk" %}
 
 </body>
 </html>
