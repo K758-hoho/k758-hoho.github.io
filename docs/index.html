@@ -45,6 +45,15 @@ a::after {
 a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    content: none;
+}
+
+a.no-transition,
+a.no-transition::after,
+a.no-transition:hover::after {
+    transition: none;
+    transform-origin: none;
+
 }
 
 .content {
