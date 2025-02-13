@@ -18,9 +18,6 @@
 html {
     background-color: #fbe9d0;
     display: grid;
-    font-family: 'Poppins', sans-serif;
-    height: 100vh;
-    width: 100vh;
     word-wrap:break-word;
     word-break:break-word;
     place-items: center;
@@ -70,6 +67,7 @@ h1, h2 {
     text-align: center;
     margin-top: 50px;
     color: #104f37;
+    font-family: 'Rubik', sans-serif;
 }
 
 header {
@@ -80,6 +78,7 @@ p {
     font-size: 20px;
     line-height: 1.5;
     color:#244855;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 footer {
@@ -147,8 +146,7 @@ a.active:hover::after {
 
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   max-width: 50vw;
 }
 
@@ -222,7 +220,12 @@ a.button:hover::after {
 
     <main>
       <h2>Featured Works</h2>
-<p>![Target Boskval](&lt;<a href="https://targetboskval.webcomic.ws">https://res.cloudinary.com/dkvkq02fo/image/upload/v1739437014/banner_500x90px_spbpef.webp</a>&gt; “My current project, a crime drama webcomic about a struggling illegal drug business.”)</p>
+<div style="text-align: center;">
+  <a href="https://targetboskval.webcomic.ws">
+    <img src="https://res.cloudinary.com/dkvkq02fo/image/upload/v1739437014/banner_500x90px_spbpef.webp" alt="Target Boskval">
+  </a>
+  <p><em>My current project, a crime drama webcomic about a struggling illegal drug business. You can read more by clicking the image.</em></p>
+</div>
 <h2>Blog</h2>
 <p>Stay updated with my latest posts:</p>
 <ul>
