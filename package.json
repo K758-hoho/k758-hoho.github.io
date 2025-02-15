@@ -9,7 +9,6 @@
   "scripts": {
     "build": "eleventy",
     "build-ghpages": "eleventy --output=docs"
-  }
   },
   "repository": {
     "type": "git",
