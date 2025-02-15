@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    "build-ghpages": "eleventy --output=docs"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-ghpages": "eleventy --output=docs",
     "build": "eleventy"
   },
   "repository": {
