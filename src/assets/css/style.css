@@ -1,10 +1,11 @@
 html {
     background-color: #fbe9d0;
     display: grid;
-    font-family: 'Poppins', sans-serif;
-    height: 100vh;
+    word-wrap:break-word;
+    word-break:break-word;
     place-items: center;
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -12,6 +13,10 @@ a {
     color: #e64833;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #e64833;
 }
 
 a::after {
@@ -33,8 +38,8 @@ a:hover::after {
 }
 
 .content {
-    max-width: 1150px;
-    margin: 10px;
+    margin: 45px;
+
 }
 
 .tagline {
@@ -45,18 +50,22 @@ a:hover::after {
 
 h1, h2 {
     text-align: center;
-    margin-top: 50px;
     color: #104f37;
+    font-family: 'Rubik', sans-serif;
 }
 
-header {
+.header {
     text-align: center;
+    margin: 20px auto;
+    padding: 25px;
+    background:#f6eee3;
 }
 
 p {
     font-size: 20px;
     line-height: 1.5;
     color:#244855;
+    font-family: 'Poppins', sans-serif;
 }
 
 footer {
@@ -74,30 +83,37 @@ footer {
     top: 0;
     gap: 30px;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.2em;
     background-color: #fbe9d0;
     padding: 10px;
+    align-items: center;
+    display:inline-flex;
 }
 
 .navbar a:link, .navbar a:visited {
-    color: #90aead;
-    text-decoration: none;
-    padding: 10px;
-    transition:all 0.3s ease;
-    border-radius: 5px;
-}
-
-.navbar a:hover {
-  background-color: #e64833;
-  color: #fbe9d0;
-}
-
-.active {
-  justify-content: flex-start;
+    top: 0;
+    display: inline-flex;
+    transition: all 0.3s ease;
+    align-items: center;
+    font-weight: bold;
+    color: #e64833;
+    padding: 15px;
 }
 
 .to {
-  justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+a.active,
+a.active::after,
+a.active:hover::after {
+  transition: none;
+  transform-origin: none;
+  content: none;
+}
+
+.active:hover {
+    transform: scale(1.1);
 }
 
 .tags {
@@ -115,17 +131,57 @@ footer {
     margin-bottom: 20px;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50vw;
+}
+
+a.img,
+a.img::after,
+a.img:hover::after {
+  transition: none;
+  transform-origin: none;
+  content: none;
+}
+
+img a:hover {
+    transform: scale(1.1);
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 .button {
     background-color: #244855;
-    color: #90aead;  
+    color: #90aead;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
 .button:hover {
     background-color: #90aead;
     color: #244855;
+}
+
+a.button,
+a.button::after,
+a.button:hover::after {
+  transition: none;
+  transform-origin: none;
+  content: none;
+}
+
+.socmed-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
