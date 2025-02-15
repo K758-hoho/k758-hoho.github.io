@@ -4,15 +4,10 @@ on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       
@@ -26,12 +21,15 @@ jobs:
           npm ci
           npm install -g @11ty/eleventy
           
+      - name: Create .nojekyll file
+        run: touch docs/.nojekyll
+          
       - name: Build site
         run: eleventy --output=docs
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
+          force_orphan: true
