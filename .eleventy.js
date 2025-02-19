@@ -1,9 +1,5 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
-
-// Helper packages
-const htmlmin = require("html-minifier");
 const { DateTime } = require("luxon");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
     // Install plugins
