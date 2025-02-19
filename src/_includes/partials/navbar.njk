@@ -1,6 +1,18 @@
-<nav class="navbar">
-    <a href="/" class="active" alt="Click to go home" title="Click to go home"><img src="https://res.cloudinary.com/dkvkq02fo/image/upload/v1739595234/tapir_logo_jge1qv.svg" width="50px" height="50px"></a>
-    <a href="/about" class="to" alt="Click to go to About" title="Click to go to About">About</a>
-    <a href="/blog" class="to" alt="Click to go to Blog" title="Click to go to Blog">Blog</a>
-    <a href="/works" class="to" alt="Click to go to Works" title="Click to go to Works">Works</a>
-</nav>
+<header>
+    <!-- Title -->
+    <hgroup>
+        <p class="title">{{meta.siteName}}</p>
+        <p class="motto">{{meta.motto}}<p>
+    </hgroup>
+    <!-- Navigation -->
+    <nav>
+        {% set navPages = collections.all | eleventyNavigation %}
+        <ul>
+            {%- for entry in navPages %}
+            <li {% if entry.url == page.url %} class="active" {% endif %}>
+                <a href="{{ entry.url | url }}">{{entry.title}}</a>
+            </li>
+            {%- endfor %}   
+        </ul>
+    </nav>
+</header>
