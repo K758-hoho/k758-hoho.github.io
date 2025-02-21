@@ -1,45 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dkvkq02fo/image/upload/v1739595234/tapir_logo_jge1qv.svg">
-    {% if description %}
-      <meta name="description" content="{{description}}"/>
-    {% endif %}
-    {% if image %}
-      <meta property="og:image" content="{{image}}"/>
-    {% endif %}
-    {% if alt %}
-      <meta property="og:image:alt" content="{{alt}}"/>
-    {% endif %}
-    {% if type %}
-      <meta property="twitter:card" content="{{type}}"/>
-    {% endif %}
-    {% if twitter %}
-      <meta property="twitter:site" content="{{twitter}}"/>
-    {% endif %}
-    {% if name %}
-      <meta property="twitter:creator" content="{{name}}"/>
-    {% endif %}
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/regular.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"></noscript>
-
+  {% include "partials/head.njk" %}
 </head>
 <body>
   {% include "partials/navbar.njk" %} 
-
-  <div class="content">
     <header>
         <h1>{{ title }}</h1>
         {% if tagline %}
