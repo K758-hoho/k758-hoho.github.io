@@ -3,21 +3,19 @@
 
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation"
 import pluginRss from "@11ty/eleventy-plugin-rss"
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 
 import {
   getAllPosts,
   getCategoryList,
   getCategorisedPosts,
-} from "/src/config/collections.js"
+} from "./src/config/collections.js"
 
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
     // Install plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(pluginRss);
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 
     // Pass through static files
     eleventyConfig.addPassthroughCopy("src/assets/images"); // Folder for images
@@ -32,11 +30,18 @@ module.exports = function (eleventyConfig) {
     // Add layour aliases
     eleventyConfig.addLayoutAlias("page", "layouts/page")
     eleventyConfig.addLayoutAlias("article", "layouts/article")
+    eleventyConfig.addLayoutAlias("post", "layouts/post")
+    eleventyConfig.addLayoutAlias("home", "layouts/home")
 
-    // Add date parsing, e.g. {{ page.date | dateToFormat("yyyy-MM-dd hh:mm:ss location") }} or 2019-08-31 23:59:56 America/New_York
     eleventyConfig.addDateParsing(function(dateValue) {
-		return DateTime.fromFormat(dateValue, "yyyy-MM-dd hh:mm:ss z");
-	});
+        if (typeof dateValue === 'string') {
+          return DateTime.fromFormat(dateValue, "yyyy-MM-dd hh:mm:ss z");
+        } else {
+          // Handle the case where dateValue is not a string
+          // You can return a default value or throw an error, depending on your needs
+          return null;
+        }
+      });
 
     // Add a filter to get the current year, e.g. {{ "now" | year }}
     eleventyConfig.addFilter("year", () => {
