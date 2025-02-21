@@ -1,13 +1,16 @@
 const { DateTime } = require("luxon");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
     // Install plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(pluginRss);
+    
     // Pass through static files
     eleventyConfig.addPassthroughCopy("src/assets/images"); // Folder for images
     eleventyConfig.addPassthroughCopy("src/assets/css"); // Folder for css
-    eleventyConfig.addPassthroughCopy("src/posts"); // Folder for blog posts
+    eleventyConfig.addPassthroughCopy("src/assets/posts"); // Folder for blog posts
 
     // Add a filter to format dates, e.g. {{ post.date | date("dd LLLL yyyy") }}
     eleventyConfig.addFilter("date", (dateObj, format) => {

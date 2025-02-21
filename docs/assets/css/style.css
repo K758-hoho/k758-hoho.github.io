@@ -38,7 +38,7 @@ a:hover::after {
 }
 
 .content {
-    margin: 45px;
+    max-width: 1100px;
 
 }
 
@@ -85,7 +85,7 @@ footer {
     width: 100%;
     font-size: 1.2em;
     background-color: #fbe9d0;
-    padding: 10px;
+    padding: 1vw;
     align-items: center;
     display:inline-flex;
 }
@@ -97,7 +97,7 @@ footer {
     align-items: center;
     font-weight: bold;
     color: #e64833;
-    padding: 15px;
+    padding: 0.2em;
 }
 
 .to {
