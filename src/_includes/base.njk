@@ -4,23 +4,8 @@
   {% include "partials/head.njk" %}
 </head>
 <body>
-  {% include "partials/navbar.njk" %} 
     <header>
-        <h1>{{ title }}</h1>
-        {% if tagline %}
-          <div class="tagline">  
-            <p>{{ tagline }}</p>
-          </div>
-        {% endif %}
-        {% if tags %}
-          <div class="tags">
-            <ul>
-                {% for tag in tags %}
-                    <li>{{ tag }}</li>
-                {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
+      {% include "partials/navbar.njk" %} 
     </header>
 
     <main>
