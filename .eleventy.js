@@ -27,7 +27,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addCollection("categoryList", getCategoryList)
     eleventyConfig.addCollection("categorisedPosts", getCategorisedPosts)
 
-    // Add layour aliases
+    // Add layout aliases
     eleventyConfig.addLayoutAlias("page", "layouts/page")
     eleventyConfig.addLayoutAlias("article", "layouts/article")
     eleventyConfig.addLayoutAlias("post", "layouts/post")
