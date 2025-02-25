@@ -1,25 +1,23 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dkvkq02fo/image/upload/v1739595234/tapir_logo_jge1qv.svg">
-    {% if description %}
-      <meta name="description" content="{{description}}"/>
-    {% endif %}
-    {% if image %}
-      <meta property="og:image" content="{{image}}"/>
-    {% endif %}
-    {% if alt %}
-      <meta property="og:image:alt" content="{{alt}}"/>
-    {% endif %}
-    {% if type %}
-      <meta property="twitter:card" content="{{type}}"/>
-    {% endif %}
-    {% if twitter %}
-      <meta property="twitter:site" content="{{twitter}}"/>
-    {% endif %}
-    {% if name %}
-      <meta property="twitter:creator" content="{{name}}"/>
-    {% endif %}
+    {% set socialImage = [metadata.url, metadata.image] | join %}
+    {% set title = "Karin Kho's Blog" %}
+      
+    <meta name="description" content="{{ metadata.description }}">
+    <meta name="author" content="{{ metadata.author.name }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+    
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="{{ metadata.description }}">
+    <meta property="og:image" content="{{ socialImage  }}">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@twitterhandle">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ metadata.description }}">
+    <meta name="twitter:image" content="socialImage">
 
     <link rel="stylesheet" href="/assets/css/style.css">
 
