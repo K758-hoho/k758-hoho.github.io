@@ -1,5 +1,5 @@
 {
-  "type":"module",
+  "type": "module",
   "name": "k758-hoho",
   "version": "1.0.0",
   "description": "This is the repository for my webcomic website. Do not reproduce the files in this repo such as comics and logos for commercial purposes without my legal permission. Always credit me whenever you share these assets non-commercially.",
@@ -26,6 +26,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^2.0.3"
+    "@11ty/eleventy-plugin-rss": "^2.0.3",
+    "eleventy-plugin-time-to-read": "^1.3.0"
   }
 }
