@@ -16,6 +16,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("article", "layouts/article");
   eleventyConfig.addLayoutAlias("post", "layouts/post");
   eleventyConfig.addLayoutAlias("home", "layouts/home");
+  eleventyConfig.addLayoutAlias("page", "layouts/base");
+
+  eleventyConfig.addCollection("posts", getAllPosts);
+  eleventyConfig.addCollection("categories", getCategoryList);
+  eleventyConfig.addCollection("categorisedPosts", getCategorisedPosts);
+
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
+  });
 
   eleventyConfig.addDateParsing(function(dateValue) {
     if (typeof dateValue === 'string') {
