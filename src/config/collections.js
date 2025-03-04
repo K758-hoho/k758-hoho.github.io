@@ -1,22 +1,22 @@
-import slugify from 'slugify'
+const slugify = require('slugify');
 
 /* Creating a collection containing all blogposts by filtering based on folder and filetype */
 const getAllPosts = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/blog/*.md')
-  .reverse()
-}
+    .reverse();
+};
 
 const getCategoryList = (collectionApi) => {
-  const catPages = []
-  let categories = []
-  const blogPosts = collectionApi.getFilteredByGlob('./src/blog/*.md')
+  const catPages = [];
+  let categories = [];
+  const blogPosts = collectionApi.getFilteredByGlob('./src/blog/*.md');
 
   blogPosts.map((item) => {
-    categories.push(item.data.category)
-  })
+    categories.push(item.data.category);
+  });
 
-  categories = categories.sort(sortAlphabetically)
-  const temp = [...new Set(categories)]
+  categories = categories.sort(sortAlphabetically);
+  const temp = [...new Set(categories)];
 
   temp.forEach((category) => {
     const slug = strToSlug(category);
@@ -24,53 +24,50 @@ const getCategoryList = (collectionApi) => {
     catPages.push({
       'key': slug,
       'name': category 
-    })
-    
-  })
+    });
+  });
 
-  return catPages
-}
+  return catPages;
+};
 
 const getCategorisedPosts = (collectionApi) => {
-  const categorisedPosts = {}
+  const categorisedPosts = {};
 
   collectionApi.getFilteredByGlob('./src/blog/*.md').forEach(item => {
-    const category = item.data.category
+    const category = item.data.category;
       
     // Ignore the ones without a category
     if (typeof category !== 'string')
-    return
+      return;
 
-    const slug = strToSlug(category)
+    const slug = strToSlug(category);
 
     if (Array.isArray(categorisedPosts[slug])) {
-      categorisedPosts[slug].push(item)
+      categorisedPosts[slug].push(item);
     } else {
-      categorisedPosts[slug] = [item]
+      categorisedPosts[slug] = [item];
     }
-  })
+  });
 
-  return categorisedPosts
-}
-
-export {
-  getAllPosts,
-  getCategoryList,
-  getCategorisedPosts
-}
-
+  return categorisedPosts;
+};
 
 function strToSlug(str) {
   const options = {
-      replacement: "-",
-      remove: /[&,+()$~%.'":*?<>{}]/g,
-      lower: true,
-  }
+    replacement: "-",
+    remove: /[&,+()$~%.'":*?<>{}]/g,
+    lower: true,
+  };
   
-  return slugify(str, options)
+  return slugify(str, options);
 }
-
 
 function sortAlphabetically(a, b) {
-  return a.localeCompare(b, "en", { sensitivity: "base" })
+  return a.localeCompare(b, "en", { sensitivity: "base" });
 }
+
+module.exports = {
+  getAllPosts,
+  getCategoryList,
+  getCategorisedPosts
+};
