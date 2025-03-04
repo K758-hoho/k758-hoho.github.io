@@ -13,11 +13,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(readingTime);
 
-  eleventyConfig.addLayoutAlias("article", "layouts/article");
-  eleventyConfig.addLayoutAlias("post", "layouts/post");
-  eleventyConfig.addLayoutAlias("home", "layouts/home");
-  eleventyConfig.addLayoutAlias("page", "layouts/base");
-
   eleventyConfig.addCollection("posts", getAllPosts);
   eleventyConfig.addCollection("categories", getCategoryList);
   eleventyConfig.addCollection("categorisedPosts", getCategorisedPosts);
